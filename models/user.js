@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const applicationSchema = new mongoose.Schema({
+
+});
+
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -9,6 +13,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  applications: [applicationSchema],
 });
 
 const User = mongoose.model('User', userSchema);
